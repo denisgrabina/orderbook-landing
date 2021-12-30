@@ -1,51 +1,48 @@
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation } from "swiper";
 import { Project } from "components/ui/Project";
 import { INVESTING, MOCK } from "constants.js";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-import SwiperCore, { Navigation } from "swiper";
 
 SwiperCore.use([Navigation]);
 
 const projects = MOCK.projects;
 
-// const useStyles = makeStyles((theme) => ({}));
-
 export const Slider = () => {
-  // const classes = useStyles();
 
   return (
-    <>
-      <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        slidesPerGroup={3}
-        loop={true}
-        loopFillGroupWithBlank={true}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        className="mySwiper"
-      >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-      </Swiper>
-      
+    <Swiper
+      spaceBetween={30}
+      freeMode={{
+        centeredSlides: true,
+        freeModeFluid: true,
+      }}
+      loop={true}
+      className="investingSlider"
+      navigation={true}
+      breakpoints={{
+        "@0.00": {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        "@0.75": {
+          slidesPerView: 2,
+          spaceBetween: 20,
+          navigation: false,
+        },
+        "@1.00": {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+      }}
+    >
       {projects.map((p, i) => {
-        return <Project data={p} type={INVESTING} key={i} />;
+        return (
+          <SwiperSlide key={i}>
+            <Project data={p} type={INVESTING} />
+          </SwiperSlide>
+        );
       })}
-    </>
+    </Swiper>
   );
 };

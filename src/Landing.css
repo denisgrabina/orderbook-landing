@@ -56,3 +56,20 @@ select,
 textarea {
   font: inherit;
 }
+
+/* Sliders */
+
+.investingSlider .swiper-button-prev::after,
+.investingSlider .swiper-button-next::after {
+  color: #ffffff;
+  font-size: 36px;
+  top: 30%;
+}
+
+.investingSlider .swiper-button-prev {
+  left: 100px;
+}
+
+.investingSlider .swiper-button-next {
+  right: 100px;
+}
