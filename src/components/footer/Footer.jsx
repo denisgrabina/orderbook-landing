@@ -42,6 +42,11 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "10px",
     maxWidth: "476px",
   },
+  media: {
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "15px",
+    },
+  }
 }));
 
 export const Footer = () => {
@@ -74,7 +79,7 @@ export const Footer = () => {
               {nav.map((n, i) => (
                 <FooterNav title={n.title} links={n.links} key={i} />
               ))}
-              <Social title={social.title} media={social.media} />
+              <Social title={social.title} media={social.media} className={classes.media} />
             </Grid>
           </Grid>
         </Grid>

@@ -8,6 +8,7 @@ import { Exits } from "components/exits/Exits";
 import { SignUp } from "components/signup/SignUp";
 import { Footer } from "components/footer/Footer";
 
+import "swiper/css/bundle";
 import "Landing.css";
 
 const Landing = () => {

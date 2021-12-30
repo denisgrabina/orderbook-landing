@@ -74,7 +74,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       padding: "15px 50px",
     },
-    
   },
   underlinedLink: {
     display: "flex",

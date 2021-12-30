@@ -28,7 +28,7 @@ export const Social = ({ title, media }) => {
   const classes = useStyles();
 
   return (
-    <Grid item sm={4} xs={12}>
+    <Grid item sm={6} xs={12}>
       <Typography variant="h5" className={classes.title}>
         {title}
       </Typography>
