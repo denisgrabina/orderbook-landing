@@ -10,19 +10,25 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: "110px 105px",
+    padding: "110px 0",
     backgroundColor: theme.palette.info.main,
+    [theme.breakpoints.down("md")]: {
+      padding: "60px 0 70px",
+    },
   },
   mainTitle: {
     fontWeight: "bold",
-    fontSize: "2.5rem",
+    fontSize: "40px",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "30px",
+    },
   },
   text: {
     maxWidth: "600px",
     marginTop: "20px",
   },
   buttonLink: {
-    display: "flex",
+    display: "block",
     backgroundColor: theme.palette.primary.main,
     borderRadius: "50px",
     border: `2px solid ${theme.palette.primary.main}`,
@@ -30,7 +36,10 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     maxWidth: "240px",
     padding: "20px 60px",
-    marginTop: "60px",
+    marginTop: "35px",
+    [theme.breakpoints.down("md")]: {
+      padding: "15px 50px",
+    },
   },
 }));
 

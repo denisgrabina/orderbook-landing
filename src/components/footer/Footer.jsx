@@ -15,8 +15,19 @@ import { Logo } from "components/ui/Logo.jsx";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: "110px 105px",
+    padding: "110px 0",
     backgroundColor: "#151414",
+  },
+  gridContainer: {
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+      alignItems: "center",
+    },
+  },
+  menu: {
+    [theme.breakpoints.down("md")]: {
+      marginTop: "30px",
+    },
   },
   disclosureTitle: {
     fontWeight: "bold",
@@ -43,8 +54,8 @@ export const Footer = () => {
   return (
     <Box className={classes.root}>
       <Container>
-        <Grid container>
-          <Grid item sm={6}>
+        <Grid container className={classes.gridContainer}>
+          <Grid item xs={12} md={6}>
             <Logo />
             <Box className={classes.disclosure}>
               <Typography variant="h5" className={classes.disclosureTitle}>
@@ -58,8 +69,8 @@ export const Footer = () => {
               </Typography>
             </Box>
           </Grid>
-          <Grid item sm={6}>
-            <Grid container>
+          <Grid item xs={12} md={6}>
+            <Grid container className={classes.menu}>
               {nav.map((n, i) => (
                 <FooterNav title={n.title} links={n.links} key={i} />
               ))}

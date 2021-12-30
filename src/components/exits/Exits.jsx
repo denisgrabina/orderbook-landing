@@ -10,13 +10,17 @@ import { Slider } from "components/exits/Slider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: "85px 75px",
+    paddingBottom: "100px",
+    paddingTop: "100px",
     backgroundColor: theme.palette.secondary.main,
   },
   mainTitle: {
     fontWeight: "bold",
-    fontSize: "2.5rem",
     color: theme.palette.info.main,
+    fontSize: "40px",
+    [theme.breakpoints.down('md')]: {
+      fontSize: "30px",
+    }
   },
   slider: {
     display: "flex",

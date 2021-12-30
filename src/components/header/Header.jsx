@@ -1,23 +1,24 @@
 import React from "react";
 import { Logo } from "components/ui/Logo.jsx";
 import {
-  AppBar,
   Container,
-  Toolbar,
   Link,
   makeStyles,
   Box,
+  Grid,
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  logo: {
-    flexGrow: "1",
-  },
-  header: {
+  root: {
     background: theme.palette.info.main,
     color: theme.palette.secondary.main,
     padding: "28px 0",
     borderBottom: "1px solid #171718",
+    position: "relative",
+    zIndex: "2",
+  },
+  logo: {
+    flexGrow: "1",
   },
   link: {
     marginRight: "45px",
@@ -36,13 +37,18 @@ export const Header = () => {
   const classes = useStyles();
 
   return (
-    <AppBar position="static" className={classes.header}>
-      <Container fixed>
-        <Toolbar>
+    <Box className={classes.root}>
+      <Container>
+        <Grid
+          container
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+        >
           <Box className={classes.logo}>
             <Logo />
           </Box>
-          <Box className={classes.nav}>
+          <Box className={classes.nav} display={{ xs: 'none', md: 'block' }}>
             <Link
               href="#"
               color="inherit"
@@ -60,7 +66,7 @@ export const Header = () => {
               Blog
             </Link>
           </Box>
-          <Box className={classes.auth}>
+          <Box className={classes.auth} display={{ xs: 'none', md: 'block' }}>
             <Link
               href="#"
               color="primary"
@@ -78,8 +84,8 @@ export const Header = () => {
               Signup
             </Link>
           </Box>
-        </Toolbar>
+        </Grid>
       </Container>
-    </AppBar>
+    </Box>
   );
 };

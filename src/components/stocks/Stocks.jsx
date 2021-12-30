@@ -12,18 +12,25 @@ import { AccordionBlock } from "components/stocks/AccordionBlock";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: "70px 90px",
+    padding: "70px 0",
     backgroundColor: theme.palette.info.main,
+    [theme.breakpoints.down("sm")]: {
+      padding: "50px 0",
+    },
   },
   mainTitle: {
     fontWeight: "bold",
-    fontSize: "2.5rem",
+    fontSize: "40px",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "30px",
+    },
   },
   content: {
     marginTop: "75px",
+    
   },
   buttonLink: {
-    display: "flex",
+    display: "block",
     backgroundColor: theme.palette.primary.main,
     borderRadius: "50px",
     border: `2px solid ${theme.palette.primary.main}`,
@@ -32,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "240px",
     padding: "20px 60px",
     marginTop: "60px",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   imageStub: {
     backgroundColor: "#434343",
@@ -39,6 +49,10 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "308px",
     borderRadius: "20px",
+    margin: "0 auto",
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "50px",
+    },
   },
 }));
 
@@ -64,7 +78,7 @@ export const Stocks = () => {
           alignItems="center"
           className={classes.content}
         >
-          <Grid item sm={3}>
+          <Grid item xs={12} sm={12} md={3}>
             <AccordionBlock />
             <Link
               href="#"
@@ -75,7 +89,7 @@ export const Stocks = () => {
               Start Trading
             </Link>
           </Grid>
-          <Grid item sm={7}>
+          <Grid item xs={12} sm={12} md={7}>
             <Box className={classes.imageStub}></Box>
           </Grid>
         </Grid>

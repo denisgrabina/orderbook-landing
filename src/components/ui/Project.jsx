@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "358px",
   },
   endDateText: {
-    color: "#a7a7a7",
+    color: "#A7A7A7",
     marginBottom: "0px",
   },
   endDate: {
@@ -44,13 +44,13 @@ export const Project = ({ type, data }) => {
       >
         {data.title}
       </Typography>
-      <Typography variant="body2" color="info" className={classes.description}>
+      <Typography variant="body2" color="textPrimary" className={classes.description}>
         {data.description}
       </Typography>
-      <Typography variant="body2" color="info" className={classes.endDateText}>
+      <Typography variant="body2" color="textPrimary" className={classes.endDateText}>
         End date
       </Typography>
-      <Typography variant="body2" color="info" className={classes.endDate}>
+      <Typography variant="body2" color="textPrimary" className={classes.endDate}>
         {data.endDate}
       </Typography>
     </>
@@ -72,7 +72,7 @@ export const Project = ({ type, data }) => {
             <Typography variant="body2" color="textSecondary" component="p">
               Offering price
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography variant="body2" color="textPrimary" component="p">
               $10
             </Typography>
           </Grid>
@@ -80,7 +80,7 @@ export const Project = ({ type, data }) => {
             <Typography variant="body2" color="textSecondary" component="p">
               Liquidation price
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography variant="body2" color="textPrimary" component="p">
               $20
             </Typography>
           </Grid>
@@ -88,7 +88,7 @@ export const Project = ({ type, data }) => {
             <Typography variant="body2" color="textSecondary" component="p">
               Return of investment
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography variant="body2" color="textPrimary" component="p">
               55%
             </Typography>
           </Grid>

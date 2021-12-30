@@ -10,26 +10,55 @@ import {
 
 const phones = require("assets/images/phones.png");
 const rocket = require("assets/images/rocket.png");
+const light = require("assets/images/light.png");
+const earth = require("assets/images/earth.png");
 
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.info.main,
-    height: "100vh",
-    backgroundAttachment: "scroll",
-    overflow: "auto",
-    // paddingBottom: "30px",
+    position: "relative",
+    paddingBottom: "120px",
+    overflow: "hidden",
+    "&::after": {
+      content: "''",
+      display: "block",
+      width: "100%",
+      height: "115px",
+      background: `url(${earth}) no-repeat center/cover`,
+      position: "absolute",
+      bottom: "0px",
+    },
+    [theme.breakpoints.down("md")]: {
+      paddingTop: "30px",
+    },
   },
-  subTitle: {
+  gridContainer: {
+    justifyContent: "space-between",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+    },
+  },
+  [theme.breakpoints.down("md")]: {
+    justifyContent: "center",
+  },
+  title: {
     fontWeight: "600",
-    fontSize: "3rem",
+    fontSize: "48px",
+    position: "relative",
+    zIndex: "2",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "30px",
+    },
   },
   text: {
     maxWidth: "550px",
     marginTop: "20px",
+    position: "relative",
+    zIndex: "2",
   },
   links: {
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "start",
     marginTop: "35px",
   },
   buttonLink: {
@@ -40,16 +69,55 @@ const useStyles = makeStyles((theme) => ({
     border: `2px solid ${theme.palette.primary.main}`,
     fontWeight: "bold",
     textAlign: "center",
+    position: "relative",
+    zIndex: "2",
+    [theme.breakpoints.down("md")]: {
+      padding: "15px 50px",
+    },
+    
   },
   underlinedLink: {
     display: "flex",
     flexGrow: 1,
-    justifyContent: "center",
+    justifyContent: "start",
     alignItems: "center",
     textDecoration: "underline",
+    marginLeft: "45px",
+    position: "relative",
+    zIndex: "2",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
+  phonesWrapper: {
+    position: "relative",
+    "&::before": {
+      content: "''",
+      display: "block",
+      width: "1015px",
+      height: "1015px",
+      background: `url(${light}) no-repeat center/contain`,
+      position: "absolute",
+      top: "-140px",
+      left: "-232px",
+      [theme.breakpoints.down("md")]: {
+        width: "500px",
+        height: "500px",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+      },
+    },
+  },
+  phones: {
+    position: "relative",
+    zIndex: 2,
   },
   img: {
     margin: "auto",
+    [theme.breakpoints.down("md")]: {
+      height: "275px",
+    },
   },
   rocket: {
     transform: "translateX(-17%)",
@@ -58,6 +126,15 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "240px",
     display: "block",
     padding: "20px 60px",
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
+  },
+  gridContainerSpaceX: {
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column-reverse",
+      paddingTop: "30px",
+    },
   },
 }));
 
@@ -70,15 +147,15 @@ export const Hero = () => {
         <Grid
           container
           direction="row"
-          justifyContent="space-between"
           alignItems="center"
+          className={classes.gridContainer}
         >
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} md={6}>
             <Box>
               <Typography
                 variant="h2"
                 color="secondary"
-                className={classes.subTitle}
+                className={classes.title}
               >
                 Invest in Pre-IPO stocks
               </Typography>
@@ -107,15 +184,19 @@ export const Hero = () => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <img src={phones} alt="phones" className={classes.img} />
+          <Grid item xs={12} md={6} className={classes.phonesWrapper}>
+            <img
+              src={phones}
+              alt="phones"
+              className={`${classes.img} ${classes.phones}`}
+            />
           </Grid>
         </Grid>
         <Grid
           container
           direction="row"
-          justifyContent="space-between"
           alignItems="center"
+          className={`${classes.gridContainer} ${classes.gridContainerSpaceX}`}
         >
           <Grid item xs={12} sm={6}>
             <img
@@ -124,12 +205,13 @@ export const Hero = () => {
               className={`${classes.img} ${classes.rocket}`}
             />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} md={6}>
             <Box>
               <Typography
                 variant="h2"
                 color="secondary"
-                className={classes.subTitle}
+                className={classes.title}
+                style={{ maxWidth: "465px" }}
               >
                 Buy SpaceX shares for as little as $1
               </Typography>
