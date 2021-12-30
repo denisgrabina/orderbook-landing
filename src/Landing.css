@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Geometria, sans-serif;
+}
+
+dd,
+ul,
+ol,
+menu {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  vertical-align: middle;
+  line-height: normal;
+  cursor: pointer;
+  border: none;
+  color: inherit;
+}
+
+button,
+a {
+  outline: none;
+  cursor: pointer;
+}
+
+button:focus,
+button:active {
+  outline: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
