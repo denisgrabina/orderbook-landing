@@ -23,14 +23,13 @@ const useStyles = makeStyles((theme) => ({
   },
   gridContainer: {
     [theme.breakpoints.down("sm")]: {
-      flexDirection: "column",
       alignItems: "center",
     },
   },
   menu: {
-    flexWrap: "nowrap",
     [theme.breakpoints.down("md")]: {
       marginTop: "30px",
+      justifyContent: "space-between",
     },
   },
   disclosureTitle: {
@@ -45,6 +44,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.secondary.main,
     marginTop: "10px",
     maxWidth: "476px",
+    [theme.breakpoints.down("md")]: {
+      maxWidth: "initial",
+    },
   },
   media: {
     [theme.breakpoints.down("sm")]: {
@@ -79,7 +81,7 @@ export const Footer = () => {
             </Box>
           </Grid>
           <Grid item xs={12} md={12} lg={6}>
-            <Grid container className={classes.menu}>
+            <Grid container className={classes.menu} wrap="wrap">
               {nav.map((n, i) => (
                 <FooterNav title={n.title} links={n.links} key={i} />
               ))}

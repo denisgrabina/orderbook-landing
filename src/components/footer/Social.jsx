@@ -2,13 +2,26 @@ import React from "react";
 import { makeStyles, Box, Grid, Typography, Link } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    [theme.breakpoints.down("sm")]: {
+      display: "flex",
+      alignItems: "center",
+      marginTop: "15px",
+    },
+  },
   title: {
     color: "#7A7A7A",
     fontSize: "18px",
+    [theme.breakpoints.down("sm")]: {
+      marginRight: "15px",
+    },
   },
   links: {
     display: "flex",
     marginTop: "10px",
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "0px",
+    },
   },
   link: {
     marginRight: "15px",
@@ -28,7 +41,7 @@ export const Social = ({ title, media }) => {
   const classes = useStyles();
 
   return (
-    <Grid item sm={6} xs={12}>
+    <Grid item xs={12} sm={6} md={4} className={classes.root}>
       <Typography variant="h5" className={classes.title}>
         {title}
       </Typography>

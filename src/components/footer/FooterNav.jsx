@@ -20,7 +20,7 @@ export const FooterNav = ({ title, links }) => {
   const classes = useStyles();
 
   return (
-    <Grid item sm={4} xs={6}>
+    <Grid item xs={6} sm={6} md={4}>
       <Typography variant="h5" className={classes.title}>
         {title}
       </Typography>
