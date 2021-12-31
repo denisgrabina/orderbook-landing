@@ -13,15 +13,20 @@ import { PROD, INVESTING } from "constants.js";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: "380px",
+    maxWidth: "382px",
     height: "472px",
     margin: "0 auto",
     boxShadow: "none",
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "240px",
+    },
   },
   image: {
-    maxWidth: "383px",
     height: "270px",
     borderRadius: "20px",
+    [theme.breakpoints.down("sm")]: {
+      height: "170px",
+    },
   },
   title: {
     fontSize: "24px",
@@ -30,6 +35,10 @@ const useStyles = makeStyles((theme) => ({
     height: "60px",
     overflow: "hidden",
     textOverflow: "ellipsis",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "16px",
+      height: "40px",
+    },
   },
   text: {
     maxWidth: "358px",
@@ -54,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
   },
   projectValue: {
     fontWeight: "600",
-  }
+  },
 }));
 
 export const Project = ({ type, data }) => {
@@ -110,7 +119,12 @@ export const Project = ({ type, data }) => {
             <Typography variant="body2" color="textSecondary" component="p">
               Offering price
             </Typography>
-            <Typography variant="body2" color="textPrimary" component="p" className={classes.projectValue}>
+            <Typography
+              variant="body2"
+              color="textPrimary"
+              component="p"
+              className={classes.projectValue}
+            >
               $10
             </Typography>
           </Grid>
@@ -118,7 +132,12 @@ export const Project = ({ type, data }) => {
             <Typography variant="body2" color="textSecondary" component="p">
               Liquidation price
             </Typography>
-            <Typography variant="body2" color="textPrimary" component="p" className={classes.projectValue}>
+            <Typography
+              variant="body2"
+              color="textPrimary"
+              component="p"
+              className={classes.projectValue}
+            >
               $20
             </Typography>
           </Grid>
@@ -126,7 +145,12 @@ export const Project = ({ type, data }) => {
             <Typography variant="body2" color="textSecondary" component="p">
               Return of investment
             </Typography>
-            <Typography variant="body2" color="textPrimary" component="p" className={classes.projectValue}>
+            <Typography
+              variant="body2"
+              color="textPrimary"
+              component="p"
+              className={classes.projectValue}
+            >
               55%
             </Typography>
           </Grid>
@@ -144,8 +168,9 @@ export const Project = ({ type, data }) => {
           height="382"
           image={`${PROD}${data.coverImage}`}
           title={data.title}
-          className={classes.image}
+          className={`${classes.image} swiper-lazy`}
         />
+        <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
       </CardActionArea>
       <CardContent className={classes.cardContent}>
         {type === INVESTING ? investingTemplate : exitsTemplate}

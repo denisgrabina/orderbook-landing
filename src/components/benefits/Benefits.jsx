@@ -12,13 +12,19 @@ const useStyles = makeStyles((theme) => ({
   },
   mainTitle: {
     fontSize: "40px",
+    marginTop: "0px",
     [theme.breakpoints.down("md")]: {
       fontSize: "30px",
     },
   },
+  gridItem: {
+    alignSelf: "start",
+  },
   gridContainer: {
-    [theme.breakpoints.down("sm")]: {
-      flexDirection: "column"
+    alignItems: "center",
+    [theme.breakpoints.down("xs")]: {
+      flexDirection: "column",
+      alignItems: "start",
     },
   },
 }));
@@ -35,15 +41,14 @@ export const Benefits = () => {
           container
           direction="row"
           justifyContent="space-between"
-          alignItems="center"
           spacing={2}
           className={classes.gridContainer}
         >
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} sm={12} md={3} className={classes.gridItem}>
             <h2 className={classes.mainTitle}>{benefits.mainTitle}</h2>
           </Grid>
           {benefit.map((b, i) => (
-            <Grid item xs={12} md={3} key={i}>
+            <Grid item xs={12} sm={4} md={3} key={i}>
               <Benefit img={b.img} title={b.title} text={b.text} key={i} />
             </Grid>
           ))}

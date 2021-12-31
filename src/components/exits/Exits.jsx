@@ -10,9 +10,17 @@ import { Slider } from "components/exits/Slider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    paddingBottom: "100px",
-    paddingTop: "100px",
+    padding: "85px 0 45px",
     backgroundColor: theme.palette.secondary.main,
+    [theme.breakpoints.down('md')]: {
+      padding: "60px 0 45px",
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding: "40px 0 0",
+    },
+    [theme.breakpoints.up('md')]: {
+      position: "relative",
+    },
   },
   mainTitle: {
     fontWeight: "bold",
@@ -26,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     marginTop: "50px",
+    [theme.breakpoints.up('md')]: {
+      position: "static",
+    }
   },
 }));
 

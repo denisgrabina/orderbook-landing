@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       maxWidth: "250px",
     },
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "initial",
+    },
   },
   title: {
     marginLeft: "12px",

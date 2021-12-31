@@ -17,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     padding: "110px 0",
     backgroundColor: "#151414",
+    [theme.breakpoints.down("md")]: {
+      padding: "50px 0 45px",
+    },
   },
   gridContainer: {
     [theme.breakpoints.down("sm")]: {
@@ -25,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   menu: {
+    flexWrap: "nowrap",
     [theme.breakpoints.down("md")]: {
       marginTop: "30px",
     },
@@ -32,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   disclosureTitle: {
     fontWeight: "bold",
     fontSize: "0.8rem",
-    color: "#333333",
+    color: "#7A7A7A",
     marginTop: "35px",
   },
   disclosureText: {
@@ -46,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       marginTop: "15px",
     },
-  }
+  },
 }));
 
 export const Footer = () => {
@@ -60,7 +64,7 @@ export const Footer = () => {
     <Box className={classes.root}>
       <Container>
         <Grid container className={classes.gridContainer}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={12} lg={6}>
             <Logo />
             <Box className={classes.disclosure}>
               <Typography variant="h5" className={classes.disclosureTitle}>
@@ -74,12 +78,16 @@ export const Footer = () => {
               </Typography>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={12} lg={6}>
             <Grid container className={classes.menu}>
               {nav.map((n, i) => (
                 <FooterNav title={n.title} links={n.links} key={i} />
               ))}
-              <Social title={social.title} media={social.media} className={classes.media} />
+              <Social
+                title={social.title}
+                media={social.media}
+                className={classes.media}
+              />
             </Grid>
           </Grid>
         </Grid>

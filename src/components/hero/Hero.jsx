@@ -24,12 +24,16 @@ const useStyles = makeStyles((theme) => ({
       display: "block",
       width: "100%",
       height: "115px",
-      background: `url(${earth}) no-repeat center/cover`,
+      background: `url(${earth}) no-repeat right/auto`,
       position: "absolute",
       bottom: "0px",
     },
     [theme.breakpoints.down("md")]: {
       paddingTop: "30px",
+      "&::after": {
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      },
     },
   },
   gridContainer: {
@@ -50,11 +54,17 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "30px",
     },
   },
+  textSpaceX: {
+    maxWidth: "460px",
+  },
   text: {
     maxWidth: "550px",
     marginTop: "20px",
     position: "relative",
     zIndex: "2",
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "initial",
+    },
   },
   links: {
     display: "flex",
@@ -62,7 +72,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "35px",
   },
   buttonLink: {
-    display: "flex",
     backgroundColor: theme.palette.primary.main,
     borderRadius: "50px",
     padding: "20px 70px",
@@ -73,6 +82,10 @@ const useStyles = makeStyles((theme) => ({
     zIndex: "2",
     [theme.breakpoints.down("md")]: {
       padding: "15px 50px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      maxWidth: "300px",
     },
   },
   underlinedLink: {
@@ -90,6 +103,7 @@ const useStyles = makeStyles((theme) => ({
   },
   phonesWrapper: {
     position: "relative",
+
     "&::before": {
       content: "''",
       display: "block",
@@ -116,6 +130,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     [theme.breakpoints.down("md")]: {
       height: "275px",
+      marginTop: "30px",
     },
   },
   rocket: {
@@ -163,6 +178,16 @@ export const Hero = () => {
                 limitations of investment amount or your account balance. Enjoy
                 investing without a broker!
               </Typography>
+              <Box
+                display={{ xs: "block", md: "none" }}
+                className={classes.phonesWrapper}
+              >
+                <img
+                  src={phones}
+                  alt="phones"
+                  className={`${classes.img} ${classes.phones}`}
+                />
+              </Box>
               <Box className={classes.links}>
                 <Link
                   href="#"
@@ -183,12 +208,17 @@ export const Hero = () => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6} className={classes.phonesWrapper}>
-            <img
-              src={phones}
-              alt="phones"
-              className={`${classes.img} ${classes.phones}`}
-            />
+          <Grid item xs={12} md={6}>
+            <Box
+              display={{ xs: "none", md: "block" }}
+              className={classes.phonesWrapper}
+            >
+              <img
+                src={phones}
+                alt="phones"
+                className={`${classes.img} ${classes.phones}`}
+              />
+            </Box>
           </Grid>
         </Grid>
         <Grid
@@ -216,8 +246,7 @@ export const Hero = () => {
               </Typography>
               <Typography
                 color="secondary"
-                className={classes.text}
-                style={{ maxWidth: "440px" }}
+                className={`${classes.text} ${classes.textSpaceX}`}
               >
                 Benefit from one of the most up-and-coming companies worldwide
                 with SpaceX Pre-IPO stock in your wallet. Get tokenized shares,

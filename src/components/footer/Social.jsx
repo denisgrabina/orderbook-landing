@@ -3,7 +3,7 @@ import { makeStyles, Box, Grid, Typography, Link } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    color: "#444434",
+    color: "#7A7A7A",
     fontSize: "18px",
   },
   links: {

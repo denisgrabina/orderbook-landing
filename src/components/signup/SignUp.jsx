@@ -36,9 +36,12 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     maxWidth: "240px",
     padding: "20px 60px",
-    marginTop: "35px",
+    marginTop: "45px",
     [theme.breakpoints.down("md")]: {
       padding: "15px 50px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "300px",
     },
   },
 }));

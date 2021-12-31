@@ -27,7 +27,9 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     marginTop: "75px",
-    
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "15px",
+    },
   },
   buttonLink: {
     display: "block",
@@ -49,10 +51,15 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "308px",
     borderRadius: "20px",
-    margin: "0 auto",
+    marginLeft: "auto",
+    marginRight: "0",
     [theme.breakpoints.down("sm")]: {
       marginTop: "50px",
+      maxWidth: "initial",
     },
+  },
+  gridItem: {
+    alignSelf: "start",
   },
 }));
 
@@ -89,7 +96,7 @@ export const Stocks = () => {
               Start Trading
             </Link>
           </Grid>
-          <Grid item xs={12} sm={12} md={7}>
+          <Grid item xs={12} sm={12} md={7} className={classes.gridItem}>
             <Box className={classes.imageStub}></Box>
           </Grid>
         </Grid>

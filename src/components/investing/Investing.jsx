@@ -13,6 +13,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     paddingBottom: "100px",
     backgroundColor: theme.palette.secondary.main,
+    [theme.breakpoints.down('sm')]: {
+      paddingBottom: "0px",
+      position: "relative",
+    }
   },
   mainTitle: {
     fontWeight: "bold",
@@ -22,9 +26,16 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "30px",
     }
   },
-  link: {
-    display: "flex",
+  link: { 
     borderBottom: `1px solid ${theme.palette.primary.main}`,
+    margin: "0 auto",
+    [theme.breakpoints.down('sm')]: {
+      position: "absolute",
+      bottom: "30px",
+      left: "50%",
+      transform: "translateX(-50%)",
+      zIndex: 2,
+    },
   },
   slider: {
     display: "flex",

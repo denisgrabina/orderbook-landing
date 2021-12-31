@@ -15,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: "1px solid #333333",
   },
   heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
+    fontSize: "18px",
+    fontWeight: "600",
     color: theme.palette.secondary.main,
   },
   text: {
@@ -30,12 +30,13 @@ export const AccordionBlock = () => {
 
   return (
     <Box>
-      {accordion.map((a, id) => (
-        <Accordion key={id} className={classes.accordion} square={false}>
+      {accordion.map((a, i) => (
+        <Accordion key={i} className={classes.accordion} square={false}>
           <AccordionSummary
             expandIcon={<ArrowDropDownIcon color="primary" />}
-            aria-controls={`panel-${id}-content`}
-            id={`panel-${id}-header`}
+            aria-controls={`panel-${i}-content`}
+            id={`panel-${i}-header`}
+
           >
             <Typography className={classes.heading}>{a.title}</Typography>
           </AccordionSummary>
