@@ -74,7 +74,7 @@ export const Footer = () => {
               </Typography>
               <Typography className={classes.disclosureText}>
                 {disclosures.text}{" "}
-                <Link href="#" color="primary">
+                <Link href="/offerings" color="primary">
                   Read more
                 </Link>
               </Typography>
