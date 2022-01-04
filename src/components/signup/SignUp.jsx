@@ -64,7 +64,7 @@ export const SignUp = () => {
           {signup.text}
         </Typography>
         <Link
-          href="#"
+          href="/auth/register"
           color="inherit"
           underline="none"
           className={`${classes.buttonLink}`}

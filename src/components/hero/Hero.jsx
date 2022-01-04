@@ -191,7 +191,7 @@ export const Hero = () => {
               </Box>
               <Box className={classes.links}>
                 <Link
-                  href="#"
+                  href="/"
                   color="inherit"
                   underline="none"
                   className={classes.buttonLink}

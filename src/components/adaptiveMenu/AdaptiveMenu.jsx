@@ -87,12 +87,12 @@ export const AdaptiveMenu = ({ clickHandler, isMenuOpen }) => {
         </Box>
         <Box className={classes.nav}>
           <Link
-            href="#"
+            href="/"
             color="inherit"
             underline="none"
             className={classes.link}
           >
-            Offering
+            Offerings
           </Link>
           <Link
             href="#"
@@ -105,7 +105,7 @@ export const AdaptiveMenu = ({ clickHandler, isMenuOpen }) => {
         </Box>
         <Box className={classes.auth}>
           <Link
-            href="#"
+            href="/auth/login"
             color="primary"
             underline="none"
             className={classes.link}
@@ -113,7 +113,7 @@ export const AdaptiveMenu = ({ clickHandler, isMenuOpen }) => {
             Login
           </Link>
           <Link
-            href="#"
+            href="/auth/register"
             color="primary"
             underline="none"
             className={classes.signup}
