@@ -5,7 +5,7 @@ const logo = require("assets/images/logo.png");
 
 export const Logo = () => {
   return (
-    <Link href="#">
+    <Link href="/">
       <img src={logo} alt="Logo" />
     </Link>
   );

@@ -161,7 +161,7 @@ export const Project = ({ type, data }) => {
 
   return (
     <Card className={classes.root} key={data.id}>
-      <CardActionArea href={data.link}>
+      <CardActionArea href={`projects/${data.link}`}>
         <CardMedia
           component="img"
           alt={data.title}

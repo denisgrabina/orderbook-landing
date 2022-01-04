@@ -1,12 +1,10 @@
 import React from "react";
 import { Logo } from "components/ui/Logo.jsx";
-import {
-  Container,
-  Link,
-  makeStyles,
-  Box,
-  Grid,
-} from "@material-ui/core";
+import { AdaptiveMenu } from "components/adaptiveMenu/AdaptiveMenu";
+
+import { Container, Link, makeStyles, Box, Grid } from "@material-ui/core";
+
+const iconTogglerOpen = require("assets/images/icon-toggler-open.svg");
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,9 +14,15 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: "1px solid #171718",
     position: "relative",
     zIndex: "2",
+    [theme.breakpoints.down("sm")]: {
+      padding: "18px 0",
+    },
   },
   logo: {
     flexGrow: "1",
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "147px",
+    },
   },
   link: {
     marginRight: "45px",
@@ -31,10 +35,20 @@ const useStyles = makeStyles((theme) => ({
     padding: "14px 40px",
     border: `2px solid ${theme.palette.primary.main}`,
   },
+  adaptiveMenuToggler: {
+    cursor: "pointer",
+  },
+  hide: {
+    display: "none",
+  },
+  show: {
+    display: "block",
+  },
 }));
 
-export const Header = () => {
+export const Header = ({ clickHandler, isMenuOpen }) => {
   const classes = useStyles();
+  const menuState = isMenuOpen ? "show" : "hide";
 
   return (
     <Box className={classes.root}>
@@ -48,14 +62,14 @@ export const Header = () => {
           <Box className={classes.logo}>
             <Logo />
           </Box>
-          <Box className={classes.nav} display={{ xs: 'none', md: 'block' }}>
+          <Box className={classes.nav} display={{ xs: "none", md: "block" }}>
             <Link
-              href="#"
+              href="/"
               color="inherit"
               underline="none"
               className={classes.link}
             >
-              Offering
+              Offerings
             </Link>
             <Link
               href="#"
@@ -66,9 +80,9 @@ export const Header = () => {
               Blog
             </Link>
           </Box>
-          <Box className={classes.auth} display={{ xs: 'none', md: 'block' }}>
+          <Box className={classes.auth} display={{ xs: "none", md: "block" }}>
             <Link
-              href="#"
+              href="/auth/login"
               color="primary"
               underline="none"
               className={classes.link}
@@ -76,13 +90,24 @@ export const Header = () => {
               Login
             </Link>
             <Link
-              href="#"
+              href="auth/register"
               color="primary"
               underline="none"
               className={classes.signup}
             >
-              Signup
+              Sign up
             </Link>
+          </Box>
+
+          <Box
+            className={classes.adaptiveMenuToggler}
+            display={{ xs: "block", md: "none" }}
+            onClick={clickHandler}
+          >
+            <img src={iconTogglerOpen} alt="icon open" />
+          </Box>
+          <Box className={menuState}>
+            <AdaptiveMenu clickHandler={clickHandler} />
           </Box>
         </Grid>
       </Container>

@@ -88,7 +88,7 @@ export const Stocks = () => {
           <Grid item xs={12} sm={12} md={3}>
             <AccordionBlock />
             <Link
-              href="#"
+              href="/"
               color="inherit"
               underline="none"
               className={`${classes.buttonLink}`}

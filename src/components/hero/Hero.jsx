@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "600",
     fontSize: "48px",
     position: "relative",
-    zIndex: "2",
+    zIndex: "1",
     [theme.breakpoints.down("md")]: {
       fontSize: "30px",
     },
@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "550px",
     marginTop: "20px",
     position: "relative",
-    zIndex: "2",
+    zIndex: "1",
     [theme.breakpoints.down("sm")]: {
       maxWidth: "initial",
     },
@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     textAlign: "center",
     position: "relative",
-    zIndex: "2",
+    zIndex: "1",
     [theme.breakpoints.down("md")]: {
       padding: "15px 50px",
     },
@@ -96,7 +96,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "underline",
     marginLeft: "45px",
     position: "relative",
-    zIndex: "2",
+    zIndex: "1",
     [theme.breakpoints.down("sm")]: {
       display: "none",
     },
@@ -119,12 +119,13 @@ const useStyles = makeStyles((theme) => ({
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
+        boxShadow: `inset 0px 0px 20px 30px ${theme.palette.info.main}`,
       },
     },
   },
   phones: {
     position: "relative",
-    zIndex: 2,
+    zIndex: 1,
   },
   img: {
     margin: "auto",
@@ -254,7 +255,7 @@ export const Hero = () => {
                 receive proceeds when the company goes public.
               </Typography>
               <Link
-                href="#"
+                href="/projects/spacex"
                 color="inherit"
                 underline="none"
                 className={`${classes.buttonLink} ${classes.buttonLinkSpaceX}`}

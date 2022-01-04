@@ -1,3 +1,5 @@
+/* Normalize */
+
 *,
 *::before,
 *::after {
@@ -57,13 +59,21 @@ textarea {
   font: inherit;
 }
 
+/* Custom Classes */
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
 /* Accordion */
 .Mui-expanded > .MuiTypography-root {
   color: #01d19f;
 }
 
 /* Sliders */
-
 .investingSlider .swiper-button-prev::after,
 .investingSlider .swiper-button-next::after {
   color: #ffffff;

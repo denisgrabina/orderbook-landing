@@ -64,7 +64,7 @@ export const Investing = () => {
             Choose a project for Pre-IPO investing
           </Typography>
           <Link
-            href="#"
+            href="/"
             color="primary"
             underline="none"
             className={classes.link}
