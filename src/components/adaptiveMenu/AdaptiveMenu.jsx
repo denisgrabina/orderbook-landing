@@ -84,7 +84,7 @@ export const AdaptiveMenu = ({ clickHandler, isMenuOpen }) => {
           <img src={iconTogglerClose} alt="icon close" />
         </Box>
       </Container>
-      <Container container direction="column">
+      <Container>
         <Box className={classes.logo}>
           <Logo />
         </Box>

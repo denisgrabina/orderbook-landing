@@ -16,25 +16,30 @@ export const Slider = () => (
     className="investingSlider"
     navigation={true}
     lazy={true}
+    watchOverflow={true}
     breakpoints={{
-      "@0.20": {
+      0: {
         slidesPerView: 1.3,
         spaceBetween: 15,
       },
-      "@0.5": {
-        slidesPerView: 4.2,
+      375: {
+        slidesPerView: 1.8,
         spaceBetween: 15,
       },
-      "@1.00": {
+      414: {
+        slidesPerView: 2.3,
+        spaceBetween: 15,
+      },
+      600: {
+        slidesPerView: 3.3,
+        spaceBetween: 15,
+      },
+      960: {
         slidesPerView: 3.5,
-        spaceBetween: 15,
-      },
-      "@1.75": {
-        slidesPerView: 3.8,
         spaceBetween: 20,
       },
-      "@2.00": {
-        slidesPerView: 4.8,
+      1600: {
+        slidesPerView: 5.8,
         spaceBetween: 20,
       },
     }}
