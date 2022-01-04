@@ -64,7 +64,7 @@ export const Header = ({ clickHandler, isMenuOpen }) => {
           </Box>
           <Box className={classes.nav} display={{ xs: "none", md: "block" }}>
             <Link
-              href="/"
+              href="/offerings"
               color="inherit"
               underline="none"
               className={classes.link}

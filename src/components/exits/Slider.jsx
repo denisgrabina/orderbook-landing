@@ -23,45 +23,25 @@ export const Slider = () => (
     }}
     lazy={true}
     breakpoints={{
-      "@0.00": {
+      "@0.20": {
         slidesPerView: 1.3,
         spaceBetween: 15,
       },
-      "@0.25": {
-        slidesPerView: 1.8,
+      "@0.5": {
+        slidesPerView: 4.2,
         spaceBetween: 15,
       },
-      "@0.35": {
-        slidesPerView: 2.5,
+      "@1.00": {
+        slidesPerView: 3.5,
         spaceBetween: 15,
       },
-      "@0.50": {
-        slidesPerView: 3.3,
-        spaceBetween: 20,
-      },
-      "@0.85": {
+      "@1.75": {
         slidesPerView: 3.8,
         spaceBetween: 20,
-      },
-      "@1.10": {
-        slidesPerView: 3.8,
-        spaceBetween: 40,
-      },
-      "@1.25": {
-        slidesPerView: 4.6,
-        spaceBetween: 40,
-      },
-      "@1.45": {
-        slidesPerView: 5.6,
-        spaceBetween: 50,
-      },
-      "@1.70": {
-        slidesPerView: 6.6,
-        spaceBetween: 50,
       },
       "@2.00": {
-        slidesPerView: 7.2,
-        spaceBetween: 50,
+        slidesPerView: 4.8,
+        spaceBetween: 20,
       },
     }}
   >
