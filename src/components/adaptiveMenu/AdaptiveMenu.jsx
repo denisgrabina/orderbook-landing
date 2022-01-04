@@ -66,6 +66,9 @@ const useStyles = makeStyles((theme) => ({
       borderBottom: "1px solid #333333",
       display: "none",
     }
+  },
+  login: {
+    marginTop: "50px",
   }
 }));
 
@@ -108,7 +111,7 @@ export const AdaptiveMenu = ({ clickHandler, isMenuOpen }) => {
             href="/auth/login"
             color="primary"
             underline="none"
-            className={classes.link}
+            className={`${classes.link} ${classes.login}`}
           >
             Login
           </Link>
