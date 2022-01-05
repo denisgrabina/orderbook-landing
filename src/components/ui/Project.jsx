@@ -29,12 +29,14 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   title: {
-    fontSize: "24px",
+    fontSize: "20px",
     fontWeight: "600",
     maxWidth: "358px",
-    height: "60px",
+    height: "50px",
     overflow: "hidden",
     textOverflow: "ellipsis",
+    marginTop: "25px",
+    marginBottom: "0px",
     [theme.breakpoints.down("sm")]: {
       fontSize: "16px",
       height: "40px",
@@ -63,6 +65,16 @@ const useStyles = makeStyles((theme) => ({
   },
   projectValue: {
     fontWeight: "600",
+  },
+  gridValue: {
+    padding: "8px 0",
+    borderBottom: "1px solid #E5E5E5",
+    "&:last-child": {
+      borderBottom: "1px solid transparent",
+    },
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "70%",
+    },
   },
 }));
 
@@ -115,7 +127,7 @@ export const Project = ({ type, data }) => {
       </Typography>
       <Box>
         <Grid container className={classes.projectValues}>
-          <Grid item sm={6} xs={12}>
+          <Grid item sm={6} xs={12} className={classes.gridValue}>
             <Typography variant="body2" color="textSecondary" component="p">
               Offering price
             </Typography>
@@ -128,7 +140,7 @@ export const Project = ({ type, data }) => {
               $10
             </Typography>
           </Grid>
-          <Grid item sm={6} xs={12}>
+          <Grid item sm={6} xs={12} className={classes.gridValue}>
             <Typography variant="body2" color="textSecondary" component="p">
               Liquidation price
             </Typography>
@@ -141,7 +153,7 @@ export const Project = ({ type, data }) => {
               $20
             </Typography>
           </Grid>
-          <Grid item sm={6} xs={12}>
+          <Grid item sm={6} xs={12} className={classes.gridValue}>
             <Typography variant="body2" color="textSecondary" component="p">
               Return of investment
             </Typography>

@@ -54,6 +54,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "end",
     marginTop: "25px",
     cursor: "pointer",
+    maxWidth: "60px",
+    marginLeft: "auto",
   },
   closeText: {
     color: theme.palette.primary.main,
