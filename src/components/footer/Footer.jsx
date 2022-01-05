@@ -53,6 +53,9 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "15px",
     },
   },
+  logo: {
+    display: "flex",
+  }
 }));
 
 export const Footer = () => {
@@ -67,8 +70,13 @@ export const Footer = () => {
       <Container>
         <Grid container className={classes.gridContainer}>
           <Grid item xs={12} md={12} lg={6}>
-            <Logo />
-            <Box className={classes.disclosure} display={{ xs: "none", md: "block" }}>
+            <Box className={classes.logo}>
+              <Logo />
+            </Box>
+            <Box
+              className={classes.disclosure}
+              display={{ xs: "none", md: "block" }}
+            >
               <Typography variant="h5" className={classes.disclosureTitle}>
                 {disclosures.title}
               </Typography>
@@ -90,7 +98,10 @@ export const Footer = () => {
                 media={social.media}
                 className={classes.media}
               />
-              <Box className={classes.disclosure} display={{ xs: "block", md: "none" }}>
+              <Box
+                className={classes.disclosure}
+                display={{ xs: "block", md: "none" }}
+              >
                 <Typography variant="h5" className={classes.disclosureTitle}>
                   {disclosures.title}
                 </Typography>

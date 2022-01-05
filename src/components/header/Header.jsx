@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logo: {
-    flexGrow: "1",
+    marginRight: "auto",
     [theme.breakpoints.down("sm")]: {
       maxWidth: "147px",
     },
