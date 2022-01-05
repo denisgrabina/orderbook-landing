@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.secondary.main,
     marginTop: "10px",
     maxWidth: "476px",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       maxWidth: "initial",
     },
   },
@@ -68,7 +68,7 @@ export const Footer = () => {
         <Grid container className={classes.gridContainer}>
           <Grid item xs={12} md={12} lg={6}>
             <Logo />
-            <Box className={classes.disclosure}>
+            <Box className={classes.disclosure} display={{ xs: "none", md: "block" }}>
               <Typography variant="h5" className={classes.disclosureTitle}>
                 {disclosures.title}
               </Typography>
@@ -90,6 +90,17 @@ export const Footer = () => {
                 media={social.media}
                 className={classes.media}
               />
+              <Box className={classes.disclosure} display={{ xs: "block", md: "none" }}>
+                <Typography variant="h5" className={classes.disclosureTitle}>
+                  {disclosures.title}
+                </Typography>
+                <Typography className={classes.disclosureText}>
+                  {disclosures.text}{" "}
+                  <Link href="/offerings" color="primary">
+                    Read more
+                  </Link>
+                </Typography>
+              </Box>
             </Grid>
           </Grid>
         </Grid>

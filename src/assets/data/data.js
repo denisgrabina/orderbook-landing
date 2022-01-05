@@ -99,23 +99,23 @@ export const data = {
         title: "Company",
         links: [
           {
-            href: "#",
+            href: "/listing",
             text: "Listing request",
           },
           {
-            href: "#",
+            href: "https://help.ambisafe.com/collection/4-orderbook",
             text: "Help center",
           },
           {
-            href: "#",
+            href: "https://assets.orderbook.io/docs/privacy.pdf",
             text: "Privacy policy",
           },
           {
-            href: "#",
+            href: "/recovery/request",
             text: "Recovery",
           },
           {
-            href: "#",
+            href: "/account/assets",
             text: " Assets list",
           },
         ],
@@ -124,19 +124,19 @@ export const data = {
         title: "Assets",
         links: [
           {
-            href: "#",
+            href: "/obk-token",
             text: "OBK token",
           },
           {
-            href: "#",
+            href: "https://assets.orderbook.io/docs/terms.pdf",
             text: "Terms of service",
           },
           {
-            href: "#",
+            href: "/trade",
             text: "Trading API",
           },
           {
-            href: "#",
+            href: "/fees",
             text: "Fees",
           },
         ],
@@ -148,27 +148,27 @@ export const data = {
         {
           src: require("assets/images/icon-social-facebook.svg"),
           alt: "facebook",
-          href: "#",
+          href: "https://www.facebook.com/orderbookio",
         },
         {
           src: require("assets/images/icon-social-youtube.svg"),
           alt: "youtube",
-          href: "#",
+          href: "https://www.youtube.com/channel/UCL2ZuxzwMT9W8Un2RxMYlBA",
         },
         {
           src: require("assets/images/icon-social-twitter.svg"),
           alt: "twitter",
-          href: "#",
+          href: "https://twitter.com/orderbook_io",
         },
         {
           src: require("assets/images/icon-social-telegram.svg"),
           alt: "telegram",
-          href: "#",
+          href: "https://t.me/unicorn_investors_club",
         },
         {
           src: require("assets/images/icon-social-medium.svg"),
           alt: "medium",
-          href: "#",
+          href: "https://medium.com/@orderbook",
         },
       ],
     },
