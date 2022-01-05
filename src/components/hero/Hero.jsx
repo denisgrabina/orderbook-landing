@@ -69,41 +69,49 @@ const useStyles = makeStyles((theme) => ({
   links: {
     display: "flex",
     justifyContent: "start",
-    marginTop: "35px",
+    flexWrap: "wrap",
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+    },
+  },
+  buttonLinkSpaceX: {
+    maxWidth: "240px",
+    display: "block",
+    padding: "20px 60px",
+  },
+  gridContainerSpaceX: {
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column-reverse",
+      paddingTop: "30px",
+    },
+  },
+  buttonLinkBox: {
+    position: "relative",
+    zIndex: "1",
+    marginTop: "25px",
+    maxWidth: "300px",
+    [theme.breakpoints.up("md")]: {
+      marginRight: "40px",
+    },
   },
   buttonLink: {
     backgroundColor: theme.palette.primary.main,
     borderRadius: "50px",
-    padding: "20px 70px",
     border: `2px solid ${theme.palette.primary.main}`,
     fontWeight: "bold",
+    color: theme.palette.info.main,
     textAlign: "center",
-    position: "relative",
-    zIndex: "1",
+    padding: "20px 50px",
+    display: "block",
+    margin: "0 auto",
     [theme.breakpoints.down("md")]: {
       padding: "15px 50px",
-    },
-    [theme.breakpoints.down("sm")]: {
       width: "100%",
       maxWidth: "300px",
     },
   },
-  underlinedLink: {
-    display: "flex",
-    flexGrow: 1,
-    justifyContent: "start",
-    alignItems: "center",
-    textDecoration: "underline",
-    marginLeft: "45px",
-    position: "relative",
-    zIndex: "1",
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
-  },
   phonesWrapper: {
     position: "relative",
-
     "&::before": {
       content: "''",
       display: "block",
@@ -137,23 +145,9 @@ const useStyles = makeStyles((theme) => ({
   rocket: {
     transform: "translateX(-17%)",
   },
-  buttonLinkSpaceX: {
-    maxWidth: "240px",
-    display: "block",
-    padding: "20px 60px",
-    [theme.breakpoints.down("md")]: {
-      display: "none",
-    },
-  },
-  gridContainerSpaceX: {
-    [theme.breakpoints.down("sm")]: {
-      flexDirection: "column-reverse",
-      paddingTop: "30px",
-    },
-  },
 }));
 
-export const Hero = () => {
+export const Hero = ({ scrollToSection }) => {
   const classes = useStyles();
 
   return (
@@ -190,22 +184,26 @@ export const Hero = () => {
                 />
               </Box>
               <Box className={classes.links}>
-                <Link
-                  href="/offerings"
-                  color="inherit"
-                  underline="none"
-                  className={classes.buttonLink}
-                >
-                  Explore offerings
-                </Link>
-                <Link
-                  href="#"
-                  color="primary"
-                  underline="none"
-                  className={classes.underlinedLink}
-                >
-                  Explore successful exits
-                </Link>
+                <Box className={classes.buttonLinkBox}>
+                  <Link
+                    href="/offerings"
+                    color="inherit"
+                    underline="none"
+                    className={classes.buttonLink}
+                  >
+                    Explore offerings
+                  </Link>
+                </Box>
+                <Box className={classes.buttonLinkBox}>
+                  <button
+                    color="inherit"
+                    underline="none"
+                    className={classes.buttonLink}
+                    onClick={scrollToSection}
+                  >
+                    Explore successful exits
+                  </button>
+                </Box>
               </Box>
             </Box>
           </Grid>
@@ -254,15 +252,19 @@ export const Hero = () => {
                 watch them increase in value as the SpaceX price grows, and
                 receive proceeds when the company goes public.
               </Typography>
-              <Link
-                href="/projects/spacex"
-                color="inherit"
-                underline="none"
-                className={`${classes.buttonLink} ${classes.buttonLinkSpaceX}`}
-                style={{ marginTop: "30px" }}
+              <Box
+                display={{ xs: "none", md: "block" }}
+                className={classes.buttonLinkBox}
               >
-                Trade SpaceX
-              </Link>
+                <Link
+                  href="/projects/spacex"
+                  color="inherit"
+                  underline="none"
+                  className={`${classes.buttonLink} ${classes.buttonLinkSpaceX}`}
+                >
+                  Trade SpaceX
+                </Link>
+              </Box>
             </Box>
           </Grid>
         </Grid>
