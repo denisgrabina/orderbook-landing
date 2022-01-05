@@ -90,7 +90,7 @@ export const Header = ({ clickHandler, isMenuOpen }) => {
               Login
             </Link>
             <Link
-              href="auth/register"
+              href="/auth/register"
               color="primary"
               underline="none"
               className={classes.signup}
