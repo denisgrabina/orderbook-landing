@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, forwardRef } from "react";
 import { data } from "assets/data/data";
 import {
   Container,
@@ -6,10 +6,10 @@ import {
   Box,
   Grid,
   Typography,
-  Link,
 } from "@material-ui/core";
 import { Social } from "components/footer/Social";
 import { FooterNav } from "components/footer/FooterNav";
+import { ReadMore } from "components/footer/ReadMore";
 
 import { Logo } from "components/ui/Logo.jsx";
 
@@ -55,18 +55,23 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     display: "flex",
-  }
+  },
+  readMore: {
+    backgroundColor: "transparent",
+  },
 }));
 
-export const Footer = () => {
+export const Footer = forwardRef(() => {
   const classes = useStyles();
+  const footerRef = useRef();
+
   const { footer } = data;
   const { disclosures } = footer;
   const { nav } = footer;
   const { social } = footer;
 
   return (
-    <Box className={classes.root}>
+    <Box className={classes.root} ref={footerRef}>
       <Container>
         <Grid container className={classes.gridContainer}>
           <Grid item xs={12} md={12} lg={6}>
@@ -80,12 +85,9 @@ export const Footer = () => {
               <Typography variant="h5" className={classes.disclosureTitle}>
                 {disclosures.title}
               </Typography>
-              <Typography className={classes.disclosureText}>
-                {disclosures.text}{" "}
-                <Link href="/offerings" color="primary">
-                  Read more
-                </Link>
-              </Typography>
+              <Box className={classes.disclosureText}>
+                <ReadMore footerRef={footerRef} />
+              </Box>
             </Box>
           </Grid>
           <Grid item xs={12} md={12} lg={6}>
@@ -105,12 +107,9 @@ export const Footer = () => {
                 <Typography variant="h5" className={classes.disclosureTitle}>
                   {disclosures.title}
                 </Typography>
-                <Typography className={classes.disclosureText}>
-                  {disclosures.text}{" "}
-                  <Link href="/offerings" color="primary">
-                    Read more
-                  </Link>
-                </Typography>
+                <Box className={classes.disclosureText}>
+                  <ReadMore footerRef={footerRef} />
+                </Box>
               </Box>
             </Grid>
           </Grid>
@@ -118,4 +117,4 @@ export const Footer = () => {
       </Container>
     </Box>
   );
-};
+});

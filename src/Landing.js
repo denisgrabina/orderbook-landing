@@ -16,13 +16,13 @@ import "Landing.css";
 const Landing = () => {
   const [isMenuOpen, toggleIsMenuOpen] = useState(false);
   const ref = useRef();
-  const clickHandler = () => toggleIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => toggleIsMenuOpen(!isMenuOpen);
   const scrollToSection = () =>
     ref.current.scrollIntoView({ block: "start", behavior: "smooth" });
 
   return (
     <div className="landing">
-      <Header clickHandler={clickHandler} isMenuOpen={isMenuOpen} />
+      <Header toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
       <Hero scrollToSection={scrollToSection} />
       <Benefits />
       <Investing />
@@ -30,7 +30,7 @@ const Landing = () => {
       <Exits ref={ref} />
       <SignUp />
       <Footer />
-      <AdaptiveMenu clickHandler={clickHandler} isMenuOpen={isMenuOpen} />
+      <AdaptiveMenu toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
     </div>
   );
 };

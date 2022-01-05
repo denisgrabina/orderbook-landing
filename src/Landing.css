@@ -68,6 +68,11 @@ textarea {
   display: none;
 }
 
+.link {
+  color: #01d19f;
+  text-decoration: none;
+}
+
 /* Accordion */
 .Mui-expanded > .MuiTypography-root {
   color: #01d19f;

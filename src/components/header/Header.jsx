@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Header = ({ clickHandler, isMenuOpen }) => {
+export const Header = ({ toggleMenu, isMenuOpen }) => {
   const classes = useStyles();
   const menuState = isMenuOpen ? "show" : "hide";
 
@@ -102,12 +102,12 @@ export const Header = ({ clickHandler, isMenuOpen }) => {
           <Box
             className={classes.adaptiveMenuToggler}
             display={{ xs: "block", md: "none" }}
-            onClick={clickHandler}
+            onClick={toggleMenu}
           >
             <img src={iconTogglerOpen} alt="icon open" />
           </Box>
           <Box className={menuState}>
-            <AdaptiveMenu clickHandler={clickHandler} />
+            <AdaptiveMenu toggleMenu={toggleMenu} />
           </Box>
         </Grid>
       </Container>

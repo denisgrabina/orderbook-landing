@@ -74,14 +74,14 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export const AdaptiveMenu = ({ clickHandler, isMenuOpen }) => {
+export const AdaptiveMenu = ({ toggleMenu, isMenuOpen }) => {
   const classes = useStyles();
   const menuState = isMenuOpen ? "show" : "hide";
 
   return (
     <Box className={`${menuState} ${classes.root}`}>
       <Container>
-        <Box onClick={clickHandler} className={classes.closeBox}>
+        <Box onClick={toggleMenu} className={classes.closeBox}>
           <span className={classes.closeText}>Close</span>
           <img src={iconTogglerClose} alt="icon close" />
         </Box>
