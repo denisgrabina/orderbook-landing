@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: "hidden",
     textOverflow: "ellipsis",
     marginTop: "25px",
-    marginBottom: "0px",
+    marginBottom: "0",
     [theme.breakpoints.down("sm")]: {
       fontSize: "16px",
       height: "40px",
@@ -53,10 +53,10 @@ const useStyles = makeStyles((theme) => ({
   endDateText: {
     color: "#A7A7A7",
     marginTop: "10px",
-    marginBottom: "0px",
+    marginBottom: "0",
   },
   endDate: {
-    marginTop: "0px",
+    marginTop: "0",
     fontWeight: "600",
   },
   cardContent: {

@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "100px",
     backgroundColor: theme.palette.secondary.main,
     [theme.breakpoints.down('sm')]: {
-      paddingBottom: "0px",
+      paddingBottom: "0",
       position: "relative",
     }
   },

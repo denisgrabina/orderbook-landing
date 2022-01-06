@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mainTitle: {
     fontSize: "40px",
-    marginTop: "0px",
+    marginTop: "0",
     [theme.breakpoints.down("md")]: {
       fontSize: "30px",
     },
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     alignSelf: "start",
   },
   gridContainer: {
-    alignItems: "center",
+    alignItems: "start",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
       alignItems: "start",

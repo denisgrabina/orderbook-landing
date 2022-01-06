@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
       height: "115px",
       background: `url(${earth}) no-repeat right/auto`,
       position: "absolute",
-      bottom: "0px",
+      bottom: "0",
     },
     [theme.breakpoints.down("md")]: {
       paddingTop: "30px",
