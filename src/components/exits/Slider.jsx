@@ -14,15 +14,23 @@ const projects = MOCK.projects;
 export const Slider = () => (
   <Swiper
     spaceBetween={30}
-    freeMode={true}
+    freeMode={{
+      enabled: true,
+      momentumBounce: false,
+    }}
     loop={true}
     className="exitsSlider"
     navigation={{
       nextEl: ".review-swiper-button-next-unique",
       prevEl: ".review-swiper-button-prev-unique",
     }}
-    lazy={true}
+    lazy={{
+      loadOnTransitionStart: true,
+      loadPrevNext: false,
+    }}
+    speed={800}
     watchOverflow={true}
+    preloadImages={false}
     breakpoints={{
       0: {
         slidesPerView: 1.3,

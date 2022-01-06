@@ -122,6 +122,14 @@ textarea {
   right: 0;
 }
 
+/* Fix slider flickering */
+.swiper-slide {
+  transform: trantranslateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
 /* Media */
 @media screen and (min-width: 960px) {
   .exitsSlider,

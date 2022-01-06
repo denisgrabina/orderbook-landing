@@ -11,12 +11,20 @@ const projects = MOCK.projects;
 export const Slider = () => (
   <Swiper
     spaceBetween={30}
-    freeMode={true}
+    freeMode={{
+      enabled: true,
+      momentumBounce: false,
+    }}
     loop={true}
     className="investingSlider"
     navigation={true}
-    lazy={true}
+    lazy={{
+      loadOnTransitionStart: true,
+      loadPrevNext: false,
+    }}
+    speed={800}
     watchOverflow={true}
+    preloadImages={false}
     breakpoints={{
       0: {
         slidesPerView: 1.3,

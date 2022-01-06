@@ -29,7 +29,7 @@ export const ReadMore = ({ footerRef }) => {
     <Box>
       {renderedText}{" "}
       <button className={classes.readMore} onClick={toggleCollapse}>
-        {isCollapsed ? "Read More" : "Read Less"}
+        {isCollapsed ? "Show More" : "Show Less"}
       </button>
     </Box>
   );

@@ -93,6 +93,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       marginRight: "40px",
     },
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "100%",
+    },
   },
   buttonLink: {
     backgroundColor: theme.palette.primary.main,
@@ -103,12 +106,29 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     padding: "20px 50px",
     display: "block",
-    margin: "0 auto",
     [theme.breakpoints.down("md")]: {
       padding: "15px 50px",
       width: "100%",
       maxWidth: "300px",
     },
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "100%",
+    },
+  },
+  underlinedLinkBox: {
+    position: "relative",
+    zIndex: "1",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: "25px",
+    [theme.breakpoints.down("md")]: {
+      justifyContent: "start",
+    },
+  },
+  underlinedLink: {
+    color: theme.palette.primary.main,
+    backgroundColor: "transparent",
+    textDecoration: "underline",
   },
   phonesWrapper: {
     position: "relative",
@@ -194,11 +214,12 @@ export const Hero = ({ scrollToSection }) => {
                     Explore offerings
                   </Link>
                 </Box>
-                <Box className={classes.buttonLinkBox}>
+                <Box
+                  className={classes.underlinedLinkBox}
+                  display={{ xs: "none", md: "flex" }}
+                >
                   <button
-                    color="inherit"
-                    underline="none"
-                    className={classes.buttonLink}
+                    className={classes.underlinedLink}
                     onClick={scrollToSection}
                   >
                     Explore successful exits
