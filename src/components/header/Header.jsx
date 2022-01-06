@@ -62,7 +62,7 @@ export const Header = ({ toggleMenu, isMenuOpen }) => {
           <Box className={classes.logo}>
             <Logo />
           </Box>
-          <Box className={classes.nav} display={{ xs: "none", md: "block" }}>
+          <Box display={{ xs: "none", md: "block" }}>
             <Link
               href="/offerings"
               color="inherit"

@@ -7,9 +7,6 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-  },
   accordion: {
     backgroundColor: "transparent",
     borderBottom: "1px solid #333333",

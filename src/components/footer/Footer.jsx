@@ -78,10 +78,7 @@ export const Footer = forwardRef(() => {
             <Box className={classes.logo}>
               <Logo />
             </Box>
-            <Box
-              className={classes.disclosure}
-              display={{ xs: "none", md: "block" }}
-            >
+            <Box display={{ xs: "none", md: "block" }}>
               <Typography variant="h5" className={classes.disclosureTitle}>
                 {disclosures.title}
               </Typography>
@@ -95,15 +92,10 @@ export const Footer = forwardRef(() => {
               {nav.map((n, i) => (
                 <FooterNav title={n.title} links={n.links} key={i} />
               ))}
-              <Social
-                title={social.title}
-                media={social.media}
-                className={classes.media}
-              />
-              <Box
-                className={classes.disclosure}
-                display={{ xs: "block", md: "none" }}
-              >
+              <Box className={classes.media}>
+                <Social title={social.title} media={social.media} />
+              </Box>
+              <Box display={{ xs: "block", md: "none" }}>
                 <Typography variant="h5" className={classes.disclosureTitle}>
                   {disclosures.title}
                 </Typography>

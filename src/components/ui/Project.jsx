@@ -126,7 +126,7 @@ export const Project = ({ type, data }) => {
         {data.title}
       </Typography>
       <Box>
-        <Grid container className={classes.projectValues}>
+        <Grid container>
           <Grid item sm={6} xs={12} className={classes.gridValue}>
             <Typography variant="body2" color="textSecondary" component="p">
               Offering price
