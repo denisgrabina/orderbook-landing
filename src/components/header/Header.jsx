@@ -1,6 +1,5 @@
 import React from "react";
 import { Logo } from "components/ui/Logo.jsx";
-import { AdaptiveMenu } from "components/adaptiveMenu/AdaptiveMenu";
 
 import { Container, Link, makeStyles, Box, Grid } from "@material-ui/core";
 
@@ -48,7 +47,6 @@ const useStyles = makeStyles((theme) => ({
 
 export const Header = ({ toggleMenu, isMenuOpen }) => {
   const classes = useStyles();
-  const menuState = isMenuOpen ? "show" : "hide";
 
   return (
     <Box className={classes.root}>
@@ -105,9 +103,6 @@ export const Header = ({ toggleMenu, isMenuOpen }) => {
             onClick={toggleMenu}
           >
             <img src={iconTogglerOpen} alt="icon open" />
-          </Box>
-          <Box className={menuState}>
-            <AdaptiveMenu toggleMenu={toggleMenu} />
           </Box>
         </Grid>
       </Container>
